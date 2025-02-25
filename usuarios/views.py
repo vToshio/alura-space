@@ -39,10 +39,6 @@ def cadastro(request):
         form = CadastroForm(request.POST)
 
         if form.is_valid():
-            if form['senha1'].value() != form['senha2'].value():
-                messages.error(request, 'Senhas não correspondentes.')
-                return redirect('cadastro')
-            
             nome = form['nome_cadastro'].value()
             email = form['email'].value()
             senha = form['senha1'].value()
